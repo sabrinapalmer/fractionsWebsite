@@ -1,0 +1,628 @@
+/*whole document styles*/
+html{
+  height: 100vh;
+  width: 100vw;
+  }
+
+body {
+  height: 95%;
+  width: 98%;
+  padding: 3px;
+  border-bottom-style:solid;
+  border-color:#008C9E;
+  border-width: thin;
+}
+
+
+section {
+  display:block;
+    height: 100%;
+    width: 100%;
+}
+
+
+/*navigation bar and header styles*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.littleTitle {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    color: white;
+    float: right;
+    padding: 10px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    transition: opacity 1s;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #00B4CC;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+header {
+    background-color: #00B4CC;
+    padding: 1px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    height: auto;
+    margin: 0px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #008C9E;
+}
+  .bigHeaderFont {
+        font-size: 80px;
+        padding: 0px;
+        margin: 5px;
+        font-family: Arial, Helvetica;
+        transition: font-size 1s;
+    }
+
+  .smallHeaderFont {
+        font-size: 50px;
+        padding: 0px;
+        margin: 5px;
+        font-family: Arial, Helvetica;
+        transition: font-size 1s;
+    }
+
+
+/*left and right boxes styles*/
+.leftboxhalf {
+      background: #fff;
+      color: #008C9E;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 25px;
+      height: 90%;
+      width: 49%;
+      margin: auto auto;
+      display: inline-block;
+      text-align: center;
+      align-content: center;
+      }
+
+.leftboxfading    {
+      opacity: 0;
+      transition: opacity 0.5s .5s;
+
+    }
+
+.leftboxbig {
+        background: #fff;
+        display: inline-block;
+        width: 82%;
+        height: 90%;
+        margin:0px;
+        vertical-align: top;
+    }
+
+.rightboxsmall {
+        background: #fff;
+        border-left-style: dotted;
+        border-left-width: thin;
+        border-left-color: #008C9E;
+        display: inline-block;
+        margin: auto;
+        width: 16%;
+        height: 90%;
+}
+
+.rightboxhalf {
+  background: #fff;
+  border-left-style: dotted;
+  border-left-width: thin;
+  border-left-color: #008C9E;
+  display: inline-block;
+  margin:auto;
+  width: 49%;
+  height: 90%;
+  margin:0px;
+  position:relative;
+  left:0px;
+  vertical-align: top;
+}
+
+.lefttextbox {
+    font-size: x-large;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+
+#idHomeTextTextBox{
+  font-size: x-large;
+  width: 80%;
+  height:100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto auto;
+  margin-top: 15%;
+}
+
+#idLeftBoxLessonBox{
+  height: 100%;
+  width: 100%;
+  margin: auto auto;
+}
+
+#idLessonBoxImgBox{
+  display: block;
+  margin: 10px auto;
+  height: 80%;
+  width: 60%;
+}
+#idLessonBoxProgBarBox{
+  display:block;
+  height: 16%;
+  position:relative;
+  top: 15px;
+  margin:auto auto;
+  width: 100%;
+  align-content: center;
+}
+
+#idImgBoxSlide {
+  display:block;
+  width: 90%;
+  margin: auto auto;
+  margin-top: 30px;
+  max-height: 100%;
+  border-style: solid;
+  border-width: thin;
+}
+
+#idLeftBoxHomeText{
+  display:inline;
+  align-content: center;
+  vertical-align: middle;
+
+}
+
+#idProgBarDiv{
+  height:auto;
+  width:56%;
+  margin:auto auto;
+}
+
+#idProgressBar {
+    width: 74%;
+    background-color: grey;
+    height: 32px;
+    display: inline-block;
+    align-content: center;
+}
+
+#bar {
+    width: 10%;
+    height: 32px;
+    background-color: #008C9E;
+    line-height: 30px;
+    color: white;
+    vertical-align: middle;
+    display: "inline";
+}
+#idNextButton {
+  height: 32px;
+  width: 13%;
+  display: "inline";
+}
+#idBackButton{
+  height: 32px;
+  width: 13%;
+  display: "inline";
+}
+
+
+
+
+
+#idLeftBoxQuizBox{
+  height: 100%;
+  width: 100%;
+  margin: auto auto;
+}
+
+#idQuizBoxQuestionBox{
+  display: block;
+  margin: 10px auto;
+  height: 70%;
+  width: 60%;
+}
+
+
+#idImgQuestionSlide {
+  display:block;
+  width: 100%;
+  margin: auto auto;
+  margin-top: 30px;
+  max-height: 100%;
+  border-style: solid;
+  border-width: thin;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+#idQuizBoxAnswersBox{
+  display:block;
+  height: 25%;
+  position:relative;
+  top: 15px;
+  margin:auto auto;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+#idAnswerBoxAnswers{
+  display: block;
+  margin: 15px;
+}
+
+#bar{
+  align-content: center;
+  text-align: center;
+}
+
+#idQuizProgressHolder{
+  width: 50%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin:auto auto;
+  padding: 15%;
+  overflow: hidden;
+}
+
+#idLessonProgressHolder{
+  width: 50%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin:auto auto;
+  padding: 15%;
+  overflow: hidden;
+}
+
+.lessonProgBarItem{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  font-size: medium;
+  padding: 8px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #00B4CC;
+}
+
+
+.quizProgBarItem{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  font-size: medium;
+  padding: 8px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.progBarItemSelected{
+  background-color: #008C9E;
+  border-color: #fff;
+  border-style: solid;
+  border-width: thin;
+  color: #fff;
+
+}
+
+.progBarItemCompleted{
+  background-color: #00B4CC;
+  color: #bbb;
+}
+
+.progBarItemNotSeenYet{
+  background-color: #aaa;
+  color: #bbb;
+}
+
+
+.helpWindowShowing{
+  width: 80%;
+  height: 65%;
+  position:absolute;
+  top:25%;
+  left: 10%;
+  background-color: #fff;
+  z-index: 40;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.15);
+  opacity: 1;
+  transition: opacity .5s;
+}
+.helpWindowTextBox{
+  width:99.8%;
+  height: 15%;
+  display: block;
+  background-color: #008C9E;
+  border-style: solid;
+  border-color: #00B4CC;
+  border-width: thin;
+}
+
+.helpHalfWindowLeft{
+  width: 49.5%;
+  height: 74%;
+  margin-left: 0;
+  margin-right: 0;
+  opacity: 1;
+  transition: opacity .5s;
+  display:inline-block;
+  vertical-align:top;
+}
+.helpHalfWindowRight{
+  width: 49.5%;
+  height: 74%;
+  margin-left: 0;
+  margin-right: 0;
+  opacity: 1;
+  transition: opacity .5s;
+  display:inline-block;
+  border-left-style: dotted;
+  border-color: #00B4CC;
+  border-width: thin;
+  vertical-align: top;
+}
+
+.helpWindowBottomDiv{
+  width: 99%;
+  height: 10%;
+  opacity: 1;
+}
+
+.helpBigWindowLeft{
+  width: 80%;
+  height: 99%;
+  margin-left: 0;
+  margin-right: 0;
+  opacity: 1;
+  transition: opacity .5s;
+  display:inline-block;
+}
+
+.helpSmallWindowRight{
+  width: 19%;
+  height: 99%;
+  margin-left: 0;
+  margin-right: 0;
+  opacity: 1;
+  transition: opacity .5s;
+  display:inline-block;
+  border-left-style: dotted;
+  border-color: #00B4CC;
+  border-width: thin;
+}
+
+
+#idHelpText{
+  width: 90%;
+  text-align: center;
+  font-size: medium;
+  color: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.nOpacity{
+  transition: opacity .5s;
+  opacity: 0;
+}
+
+.displayNone{
+  display: none;
+}
+#idHomeButtonHolder{
+  width: 50%;
+  height: 20%;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin:auto auto;
+  padding: 25%;
+  overflow: hidden;
+
+}
+
+#idStartQuizButton{
+  background-color: #00B4CC;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #008C9E;
+}
+#idReviewLessonsButton{
+  background-color: #00B4CC;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #008C9E;
+}
+
+#idHelpBottomButton{
+  background-color: #008C9E;
+  color: #fff;
+  width: 20%;
+  height: auto;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00B4CC;
+  margin:auto auto;
+  margin-top: .5%;
+  text-align: center;
+}
+
+#idHelpLessonButtonHolder{
+  width: 30%;
+  height: 20%;
+  display:block;
+  margin: auto auto;
+}
+
+.helpLessonButton11{
+  margin: auto auto;
+  margin-top: 100%;
+  width: 100%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
+
+.helpLessonButton21{
+  margin: auto auto;
+  width: 100%;
+  margin-top: 85%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
+
+.helpLessonButton2{
+  margin: auto auto;
+  width: 100%;
+  margin-top: 10%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
+
+.helpLessonButton31{
+  margin: auto auto;
+  width: 100%;
+  margin-top: 75%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
+
+.helpLessonButton41{
+  margin: auto auto;
+  width: 100%;
+  margin-top: 65%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
