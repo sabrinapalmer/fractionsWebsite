@@ -9,6 +9,7 @@ function homeClick(){
   _("idCornerTitle").style.opacity = 0;
   _("idLeftBox").innerHTML = homeHTML;
   _("idRightBox").innerHTML = homeButtonsHTML;
+  _("idHelpButtonHolder").innerHTML = "";
   setTimeout(function(){
         _("idLeftBoxHomeText").style.opacity = 1;
         _("idHomeButtonHolder").style.opacity = 1;
@@ -27,6 +28,7 @@ function quizClick(){
   _("idCornerTitle").style.opacity = 1;
   _("idLeftBox").innerHTML = quizHTML;
   _("idRightBox").innerHTML = quizProgressHTML;
+  _("idHelpButtonHolder").innerHTML = "";
   showCheckpointQuestion(1);
   setTimeout(function(){
     _("idLeftBoxQuizBox").style.opacity = 1;
@@ -36,6 +38,7 @@ function quizClick(){
 }
 
 
+
 function lessonsClick(x){
   headerToSmall();
   headerToLessons();
@@ -43,6 +46,7 @@ function lessonsClick(x){
   _("idCornerTitle").style.opacity = 1;
   _("idLeftBox").innerHTML = lessonsHTML;
   _("idRightBox").innerHTML = lessonsProgressHTML;
+  _("idHelpButtonHolder").innerHTML = "";
   var slideNumber = 1;
   var lessonNumber = x;
   var totalSlides = totalsArray(x);

@@ -20,12 +20,14 @@ function showLesson(slideNumber, lessonNumber){
 
 function progressBar(slideNumber, lessonNumber, totalSlides){
   var progBarHTML =
-      "<div id = \"idProgBarDiv\" style=\"align-content:center\"><button id = \"idBackButton\" onclick = \"backButtonFunc("+slideNumber+","+lessonNumber+","+totalSlides+")\">back</button>"
+      "<div id = \"idProgBarDiv\" style=\"align-content:center\"><img id = \"idBackButton\" onclick = \"backButtonFunc("+slideNumber+","+lessonNumber+","+totalSlides+")\"></img>"
       +"<div id = \"idProgressBar\">"
       +"<div id = \"bar\"></div>"
       +"</div>"
-      +"<button id = \"idNextButton\" onclick = \"nextButtonFunc("+slideNumber+","+lessonNumber+","+totalSlides+")\">next</button></div>";
+      +"<img id = \"idNextButton\" onclick = \"nextButtonFunc("+slideNumber+","+lessonNumber+","+totalSlides+")\"></img></div>";
   _("idLessonBoxProgBarBox").innerHTML = progBarHTML;
+  _("idNextButton").src = "./icons/nextarrow.png";
+  _("idBackButton").src = "./icons/backarrow.png";
 
   var progressPercent = slideNumber/totalSlides;
   _("bar").style.width = (progressPercent*100)+"%";
@@ -44,6 +46,10 @@ function backButtonFunc(slideNumber, lessonNumber, totalSlides){
     slideNumber = slideNumber - 1;
   }
   showLesson(slideNumber, lessonNumber);
+  _("idBackButton").src = "./icons/backarrowdark.png";
+  setTimeout(function(){
+        _("idBackButton").src = "./icons/backarrow.png";
+      }, 220);
 }
 
 function nextButtonFunc(slideNumber, lessonNumber, totalSlides){
@@ -59,6 +65,10 @@ function nextButtonFunc(slideNumber, lessonNumber, totalSlides){
     slideNumber = slideNumber + 1;
   }
   showLesson(slideNumber, lessonNumber);
+  _("idNextButton").src = "./icons/nextarrowdark.png";
+  setTimeout(function(){
+        _("idNextButton").src = "./icons/nextarrow.png";
+      }, 220);
 }
 
 
