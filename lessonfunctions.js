@@ -2,6 +2,9 @@ function _(x){
     return document.getElementById(x);
 }
 
+//TO DO: totalsArray
+//    nextButtonFunc change number of lessons when I KNOW
+//        also change lesson progress html for adding or removing lessons
 
 function totalsArray(x){
   var lessonTotalsArray = [12, 12, 12, 12, 12, 12, 12];

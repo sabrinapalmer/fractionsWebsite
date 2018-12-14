@@ -181,7 +181,7 @@ header {
   height: 90%;
   margin:0px;
   position:relative;
-  left:0px;
+  left:2px;
   vertical-align: top;
 }
 
@@ -281,8 +281,36 @@ header {
   display: "inline";
 }
 
-
-
+#idHelpNextButton{
+  height: 40%;
+  width: 83%;
+  margin-left: 0px;
+  display: "inline";
+  vertical-align: middle;
+  margin-top: 50%;
+}
+#idHelpBackButton{
+  height: 40%;
+  width: 80%;
+  margin-right: 3px
+  display: "inline";
+  margin-top: 50%;
+  vertical-align: middle;
+}
+#idNextBtnText{
+  position: absolute;
+  top: 36.5%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color:#008C9E;
+}
+#idBackBtnText{
+  position: absolute;
+  top: 37%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  color:#008C9E;
+}
 
 
 #idLeftBoxQuizBox{
@@ -295,16 +323,16 @@ header {
   display: block;
   margin: 10px auto;
   height: 50%;
-  width: 60%;
+  width: 80%;
 }
 
 
 #idImgQuestionSlide {
   display:block;
-  width: 100%;
+  max-width: 100%;
   margin: auto auto;
   margin-top: 30px;
-  max-height: 100%;
+  height: 100%;
   border-style: solid;
   border-width: thin;
   vertical-align: baseline;
@@ -457,17 +485,16 @@ header {
 
 .helpBigWindowLeft{
   width: 78%;
-  height: 65%;
+  height: 80%;
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
   opacity: 1;
   transition: opacity .5s;
   display:inline-block;
 }
 
 .helpSmallWindowRight{
-  width: 19%;
+  width: 20%;
   height: 65%;
   margin-left: 0;
   margin-right: 0;
@@ -477,6 +504,7 @@ header {
   border-left-style: dotted;
   border-color: #00B4CC;
   border-width: thin;
+  vertical-align: top;
 }
 
 
@@ -718,21 +746,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-
-
-
-
-
 #idHelpQuizBox{
   height: 95%;
   width: 95%;
   margin: auto auto;
+  padding-top: 5%;
 }
 
 #idHelpQuestionBox{
   display: block;
   margin: 0px auto;
-  height: 50%;
+  height: 60%;
   width: 60%;
 }
 
@@ -750,7 +774,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #idHelpAnswersBox{
   display:block;
-  height: 40%;
+  height: 20%;
   position:relative;
   top: 15px;
   margin:auto auto;
@@ -778,4 +802,119 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff;
   text-align: center;
   padding:2px;
+}
+
+
+#idHelpLessonBox{
+  height: 100%;
+  width: 100%;
+  margin: auto auto;
+  vertical-align: top;
+}
+
+#idHelpLessonImgBox{
+  display: inline-block;
+  margin: auto auto;
+  height: 100%;
+  width: 69%;
+}
+#idHelpLessonNextButtonBox{
+  display:inline-block;
+  height: 100%;
+  position:relative;
+  top: 15px;
+  margin:auto auto;
+  width: 15%;
+  align-content: center;
+  vertical-align: top;
+}
+
+#idHelpLessonBackButtonBox{
+  display:inline-block;
+  height: 100%;
+  position:relative;
+  top: 15px;
+  margin:auto auto;
+  margin-left: 4px;
+  width: 15%;
+  align-content: center;
+  vertical-align: top;
+}
+
+#idHelpLessonImgBoxSlide {
+  display:block;
+  max-width: 100%;
+  margin: auto auto;
+  padding-top: 10px;
+  height: 100%;
+
+}
+
+#idHelpWindowRightButtonsBox{
+  display:block;
+  width: 70%;
+  height: 20%;
+  margin: auto auto;
+  vertical-align: top;
+}
+
+#idHelpGuideRelevantLessonButton{
+  height: auto;
+  width: 100%;
+  margin: auto auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+  margin-top: 75%;
+}
+
+#idHelpRetryButtonSmaller{
+  height: auto;
+  width: 100%;
+  margin: auto auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+  margin-top: 8%;
+}
+
+#idHelpReturnToGuideQuestionButton{
+  height: auto;
+  width: 100%;
+  margin: auto auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+  margin-top: 75%;
+}
+
+#idWorkedExampleImgBox{
+  height: 100%;
+  width: 90%;
+  margin:auto auto;
+}
+
+#idWorkedExampleImgSlide{
+  width: 100%;
+  max-height: 100%;
+  margin-top: 10%;
+
 }

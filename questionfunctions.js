@@ -1,6 +1,11 @@
 function _(x){
     return document.getElementById(x);
 }
+
+//TO DO: correctAnswersArray,
+//    loadAnswers (answer options) function
+//    checkpointSubmitButtonFunc enter question numbers for types
+//    change html for checkpoint question progress if i add or remove questions
 var correctAnswersArray = [
     [
       [1,1,1],[1,1,1],[1,1,1]
@@ -43,6 +48,15 @@ function showCheckpointQuestionNewVarWithWorked(questionNumber, variation){
   bigToHalf();
   _("idQuizProgressHolder").innerHTML = "";
   loadAnswers(questionNumber, variation);
+  _("idRightBox").innerHTML = "<div id=\"idWorkedExampleImgBox\"></div>";
+  _("idWorkedExampleImgBox").innerHTML = "<img id=\"idWorkedExampleImgSlide\"/>";
+  var workedExampleNumber = variation - 1;
+  if(workedExampleNumber==0){
+    workedExampleNumber = 3;
+  }
+  var workedFileName = "v" + workedExampleNumber + ".jpg";
+  var workedPath = "./question"+questionNumber+"/workedExample/"+workedFileName;
+  _("idWorkedExampleImgSlide").src = workedPath;
 }
 
 
@@ -119,7 +133,6 @@ function packageAnswers(type){
 
 
 function loadAnswers(questionNumber, variation){
-
   switch(questionNumber){
     case 1:
     switch(variation){
@@ -301,8 +314,7 @@ function checkpointSubmitButtonFunc(questionNumber, variation){
   }
   packageAnswers(type);
   checkAnswers(questionNumber, variation);
-  //nextquestion(questionNumber);
-  //_("idHeaderText").innerHTML = selectedAnswerArray[0];
+
 }
 
 
@@ -329,15 +341,3 @@ function checkAnswers(questionNumber, variation){
     showHelpWindow(questionNumber, variation);
   }
 }
-
-var correctAnswersArray = [
-    [
-      [1,1,1],[1,1,1],[1,1,1]
-    ],
-    [
-      [],[],[]
-    ],
-    [
-      [],[],[]
-    ]
-  ];
