@@ -297,20 +297,8 @@ header {
   margin-top: 50%;
   vertical-align: middle;
 }
-#idNextBtnText{
-  position: absolute;
-  top: 36.5%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  color:#008C9E;
-}
-#idBackBtnText{
-  position: absolute;
-  top: 37%;
-  left: 41%;
-  transform: translate(-50%, -50%);
-  color:#008C9E;
-}
+
+
 
 
 #idLeftBoxQuizBox{
@@ -327,14 +315,22 @@ header {
 }
 
 
-#idImgQuestionSlide {
+.idImgQuestionSlide {
   display:block;
   max-width: 100%;
   margin: auto auto;
   margin-top: 30px;
   height: 100%;
-  border-style: solid;
-  border-width: thin;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+.idImgQuestionSlideThin{
+  display:block;
+  width: 100%;
+  margin: auto auto;
+  margin-top: 30px;
+  max-height: 100%;
   vertical-align: baseline;
   text-align: center;
 }
@@ -665,6 +661,22 @@ header {
   padding:2px;
 }
 
+.helpLessonButton51{
+  margin: auto auto;
+  width: 100%;
+  margin-top: 45%;
+  height: auto;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #008C9E;
+  background-color: #00B4CC;
+  color: #fff;
+  text-align: center;
+  padding:2px;
+}
+
 #idHelpGuideButton{
   margin: auto auto;
   width: 100%;
@@ -763,11 +775,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 #idImgGuideSlide {
   display:block;
-  width: 95%;
+  max-width: 100%;
   margin: auto auto;
-  max-height: 100%;
-  border-style: solid;
-  border-width: thin;
+  height: 100%;
   vertical-align: baseline;
   text-align: center;
 }
@@ -907,14 +917,41 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #idWorkedExampleImgBox{
-  height: 100%;
-  width: 90%;
+  height: auto;
+  width: 70%;
   margin:auto auto;
+  margin-top: 0;
+  vertical-align: top;
 }
 
 #idWorkedExampleImgSlide{
-  width: 100%;
-  max-height: 100%;
-  margin-top: 10%;
+  width: 90%;
+  max-height: 90%;
+  vertical-align: top;
 
+}
+
+.fracInputBox{
+  width: 30px;
+  height: 60%;
+  margin: auto auto;
+}
+
+.fracInputTop{
+  font-size:14pt;
+  width:90%;
+  height: 50%;
+  text-align: center;
+  border-style: solid;
+  border-width: .1px;
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+}
+.fracInputBottom{
+  font-size:14pt;
+  width: 90%;
+  height: 50%;
+  text-align: center;
+  border-style: solid;
+  border-width: .1px;
 }

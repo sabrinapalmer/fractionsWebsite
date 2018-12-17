@@ -7,20 +7,20 @@
 //    fix guideSubmitButtonFunc if i add more than (or less than) 3 guide questions for one checkpoint
 //    change help bar text for right buttons
 var guideQuestionRelevantLesson = [
-  [1,2,3],
-  [1,2,3],
-  [],
+  [1,1],
+  [1,6,6,6],
+  [2,4],
   []
 ];
 
 var guideQuestionAnswers = [
-  [1,1,1],
-  [1,1,1],
-  [],
+  [1,3],
+  [1,2,4,3],
+  [2,2],
   []
 ];
 
-var lessonNames = ["fractions", "fractions2", "fractions3", "fractions4"];
+var lessonNames = ["fractions", "greatest common divisor", "least common multiple", "simplifying", "common denominators", "converting", "equivalences", "comparing", "adding & subtracting", "multiplying", "dividing","part to whole"];
 
 function showHelpWindow(questionNumber, variation){
   _("idHelpWindow").className = "helpWindowShowing";
@@ -31,7 +31,7 @@ function showHelpWindow(questionNumber, variation){
   _("idHelpWindowBottomDiv").className = "helpWindowBottomDiv";
   _("idHelpWindowRight").innerHTML = "<div id=\"idHelpLessonButtonHolder\"></div>";
   if(variation<=3){
-    _("idHelpText").innerHTML = "sorry, that wasn't quite right... click to either attempt some easier <b>guide&nbsp;questions</b> to pinpoint your confusion&nbsp;(recommended) or review the <b>relevant&nbsp;lessons</b>. then you can retry that checkpoint question with a worked example for extra help.";
+    _("idHelpText").innerHTML = "sorry, that wasn't quite right... click to either attempt some easier <b>guide&nbsp;questions</b> to pinpoint your confusion&nbsp;(recommended) or review the <b>relevant&nbsp;lessons</b>. then you can retry that checkpoint question with a little extra help.";
     _("idHelpWindowBottomDiv").innerHTML = "<div id=\"idHelpBottomButton\" onclick=\"hideHelpWindow("+questionNumber+","+variation+")\">retry checkpoint question</div>";
   }
   else{
@@ -55,11 +55,12 @@ function showGuideQuestions(questionNumber,variation){
    //_("idHelpWindowRight").innerHTML = "";
    _("idHelpWindowLeft").className = "helpBigWindowLeft";
    _("idHelpWindowRight").className = "helpSmallWindowRight";
+   _("idHelpText").innerHTML = "";
    displayGuideQuestionSlide(questionNumber,1,variation);
 }
 
 function displayGuideQuestionSlide(questionNumber, guideQuestionNumber, variation){
-  var fileName = "q" + guideQuestionNumber +".png";
+  var fileName = "q" + guideQuestionNumber +".jpg";
   var path = "./question"+questionNumber+"/guide/"+fileName;
   _("idHelpQuestionBox").innerHTML = "<img id = \"idImgGuideSlide\"/>";
   _("idImgGuideSlide").src = path;
@@ -69,11 +70,11 @@ function displayGuideQuestionSlide(questionNumber, guideQuestionNumber, variatio
   _("idHelpWindowBottomDiv").innerHTML = "";
   var relevantLessonNumber = guideQuestionRelevantLesson[questionNumber-1][guideQuestionNumber-1];
   if(variation<=3){
-    _("idHelpWindowRightButtonsBox").innerHTML = "<div id=\"idHelpGuideRelevantLessonButton\" onclick=\"showHelpLesson("+relevantLessonNumber+","+variation+","+guideQuestionNumber+","+questionNumber+")\">lesson "+relevantLessonNumber+": "+lessonNames[relevantLessonNumber-1]+"</div>"
+    _("idHelpWindowRightButtonsBox").innerHTML = "<div id=\"idHelpGuideRelevantLessonButton\" onclick=\"showHelpLesson("+relevantLessonNumber+","+variation+","+guideQuestionNumber+","+questionNumber+")\">lesson&nbsp;"+relevantLessonNumber+": "+lessonNames[relevantLessonNumber-1]+"</div>"
         +"<div id=\"idHelpRetryButtonSmaller\"onclick=\"hideHelpWindow("+questionNumber+","+variation+")\">retry checkpoint question</div>";
   }
   else{
-    _("idHelpWindowRightButtonsBox").innerHTML = "<div id=\"idHelpGuideRelevantLessonButton\" onclick=\"showHelpLesson("+relevantLessonNumber+","+variation+","+guideQuestionNumber+","+questionNumber+")\">lesson "+relevantLessonNumber+": "+lessonNames[relevantLessonNumber-1]+"</div>"
+    _("idHelpWindowRightButtonsBox").innerHTML = "<div id=\"idHelpGuideRelevantLessonButton\" onclick=\"showHelpLesson("+relevantLessonNumber+","+variation+","+guideQuestionNumber+","+questionNumber+")\">lesson&nbsp;"+relevantLessonNumber+": "+lessonNames[relevantLessonNumber-1]+"</div>"
         +"<div id=\"idHelpRetryButtonSmaller\"onclick=\"hideHelpWindow("+questionNumber+","+variation+")\">try checkpoint question</div>";
   }
 }
@@ -99,7 +100,7 @@ function hideHelpWindow(questionNumber, variation){
 }
 
 function lessonButtonHTMLfunc(lessonNumber, numberOfLessons,variation, questionNumber){
-  var lessonButtonHTML = "<div id=\"idHelpLessonButton"+lessonNumber+"\" class=\"helpLessonButton"+numberOfLessons+"\" onclick=\"lessonButtonNoGuideAttempt("+lessonNumber+","+variation+","+questionNumber+")\">lesson "+lessonNumber+": "+lessonNames[lessonNumber-1]+"</div>";
+  var lessonButtonHTML = "<div id=\"idHelpLessonButton"+lessonNumber+"\" onmouseover=\"showLessonName("+lessonNumber+")\" onmouseout=\"hideLessonName("+lessonNumber+")\" class=\"helpLessonButton"+numberOfLessons+"\" onclick=\"lessonButtonNoGuideAttempt("+lessonNumber+","+variation+","+questionNumber+")\">lesson "+lessonNumber+": "+lessonNames[lessonNumber-1]+"</div>";
   return lessonButtonHTML;
 }
 
@@ -116,10 +117,10 @@ function relevantLessonHTML(questionNumber, variation){
       returnHTML = lessonButtonHTMLfunc(1,11,variation,questionNumber);
       break;
     case 2:
-      returnHTML = lessonButtonHTMLfunc(1,21,variation,questionNumber) + lessonButtonHTMLfunc(2,2,variation,questionNumber);
+      returnHTML = lessonButtonHTMLfunc(1,51,variation,questionNumber) + lessonButtonHTMLfunc(2,2,variation,questionNumber) + lessonButtonHTMLfunc(4,2,variation,questionNumber) + lessonButtonHTMLfunc(6,2,variation,questionNumber) + lessonButtonHTMLfunc(7,2,variation,questionNumber);
       break;
     case 3:
-      returnHTML = lessonButtonHTMLfunc(1,31,variation,questionNumber) + lessonButtonHTMLfunc(2,2,variation,questionNumber) + lessonButtonHTMLfunc(3,2,variation,questionNumber);
+      returnHTML = lessonButtonHTMLfunc(2,21,variation,questionNumber) + lessonButtonHTMLfunc(4,2,variation,questionNumber);
       break;
     case 4:
       returnHTML = lessonButtonHTMLfunc(1,41,variation,questionNumber) + lessonButtonHTMLfunc(2,2,variation,questionNumber) + lessonButtonHTMLfunc(3,2,variation,questionNumber) + lessonButtonHTMLfunc(4,2,variation,questionNumber);
@@ -165,20 +166,27 @@ function guideSubmitButtonFunc(questionNumber,guideQuestionNumber, variation){
     correct = false;
   }
   if(correct){
-    if(guideQuestionNumber==1){
-      _("idHelpText").innerHTML = "nice! two more guide questions!";
-      displayGuideQuestionSlide(questionNumber,2,variation);
-    }
-    else if(guideQuestionNumber==2){
-      _("idHelpText").innerHTML = "great work! last guide question!";
-      displayGuideQuestionSlide(questionNumber,3,variation);
-    }
-    else if(guideQuestionNumber==3){
+    guideQuestionNumber=guideQuestionNumber+1;
+    if(guideQuestionNumber==guideQuestionAnswers[questionNumber-1].length+1){
       hideHelpWindow(questionNumber, variation);
+    }
+    else if(guideQuestionNumber==guideQuestionAnswers[questionNumber-1].length){
+      _("idHelpText").innerHTML = "great work! last guide question!";
+      displayGuideQuestionSlide(questionNumber,guideQuestionNumber,variation);
+    }
+    else{
+      _("idHelpText").innerHTML = "nice job! only a few more...";
+      displayGuideQuestionSlide(questionNumber,guideQuestionNumber,variation);
     }
     }
   else{
+    _("idHelpText").innerHTML = "";
+
+    setTimeout(function(){
     _("idHelpText").innerHTML = "oops not that one... try again or check out the related lesson on the right";
+
+  },70);
+  //  _("idHelpText").innerHTML = "oops not that one... try again or check out the related lesson on the right";
   }
 }
 
@@ -206,23 +214,26 @@ function showHelpLesson(lessonNumber, variation, fromGuideNumber, questionNumber
 function returnToGuideQuestionFunc(questionNumber, variation, fromGuideNumber){
   showGuideQuestions(questionNumber,variation);
   displayGuideQuestionSlide(questionNumber, fromGuideNumber,variation);
+  _("idHelpText").innerHTML = "";
+
 }
 
 function showHelpLessonSlide(lessonNumber, helpSlideNumber){
   var totalSlides = totalsArray(lessonNumber);
-  var path = "./lessonSlides/fractions" + lessonNumber + helpSlideNumber + totalSlides + ".jpg";
+  var path = "./lessonSlides/lesson" + lessonNumber + "/s" + helpSlideNumber + ".jpg";
   _("idHelpLessonImgBox").innerHTML = "<img id=\"idHelpLessonImgBoxSlide\"/>";
   _("idHelpLessonImgBoxSlide").src = path;
   _("idHelpWindowBottomDiv").innerHTML = "";
-  _("idHelpLessonNextButtonBox").innerHTML = "<img id = \"idHelpNextButton\" onclick = \"helpNextButtonFunc("+helpSlideNumber+","+lessonNumber+")\"></img><div id=\"idNextBtnText\" class=\"textOnButton\" onclick = \"helpNextButtonFunc("+helpSlideNumber+","+lessonNumber+")\">next</div>";
-  _("idHelpLessonBackButtonBox").innerHTML = "<img id = \"idHelpBackButton\" onclick = \"helpBackButtonFunc("+helpSlideNumber+","+lessonNumber+")\"></img><div id=\"idBackBtnText\" class=\"textOnButton\" onclick = \"helpBackButtonFunc("+helpSlideNumber+","+lessonNumber+")\">back</div>";
+  _("idHelpLessonNextButtonBox").innerHTML = "<img id = \"idHelpNextButton\" onclick = \"helpNextButtonFunc("+helpSlideNumber+","+lessonNumber+")\"></img>";
+  _("idHelpLessonBackButtonBox").innerHTML = "<img id = \"idHelpBackButton\" onclick = \"helpBackButtonFunc("+helpSlideNumber+","+lessonNumber+")\"></img>";
   _("idHelpNextButton").src = "./icons/nextarrow.png";
   _("idHelpBackButton").src = "./icons/backarrow.png";
+  _("idHelpText").innerHTML = "";
 }
 
 
 function helpNextButtonFunc(helpSlideNumber,lessonNumber){
-  var totalSlides = totalsArray[lessonNumber];
+  var totalSlides = totalsArray(lessonNumber);
   if(helpSlideNumber != totalSlides){
     helpSlideNumber = helpSlideNumber + 1;
     showHelpLessonSlide(lessonNumber, helpSlideNumber);

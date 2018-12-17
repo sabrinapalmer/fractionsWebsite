@@ -7,13 +7,13 @@ function _(x){
 //        also change lesson progress html for adding or removing lessons
 
 function totalsArray(x){
-  var lessonTotalsArray = [12, 12, 12, 12, 12, 12, 12];
-  return lessonTotalsArray[x];
+  var lessonTotalsArray = [18, 6, 16, 8, 13, 32, 12];
+  return lessonTotalsArray[x-1];
 }
 
 function showLesson(slideNumber, lessonNumber){
   var totalSlides = totalsArray(lessonNumber);
-  var path = "./lessonSlides/fractions" + lessonNumber + slideNumber + totalSlides + ".jpg";
+  var path = "./lessonSlides/lesson" + lessonNumber + "/s" + slideNumber + ".jpg";
   _("idLessonBoxImgBox").innerHTML = "<img id = \"idImgBoxSlide\"/>"
   _("idImgBoxSlide").src = path;
   progressBar(slideNumber, lessonNumber, totalSlides);
@@ -87,4 +87,15 @@ function updateLessonProgBar(lessonNumber){
       progElement.className = "lessonProgBarItem";
     }
   }
+}
+
+
+function showLessonName(lessonNumber){
+  var makeIDName = "idLessonProgLesson" + lessonNumber;
+  _(makeIDName).innerHTML = lessonNames[lessonNumber-1];
+}
+
+function hideLessonName(lessonNumber){
+  var makeIDName = "idLessonProgLesson" + lessonNumber;
+  _(makeIDName).innerHTML = "lesson" + lessonNumber;
 }

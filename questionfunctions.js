@@ -8,13 +8,13 @@ function _(x){
 //    change html for checkpoint question progress if i add or remove questions
 var correctAnswersArray = [
     [
-      [1,1,1],[1,1,1],[1,1,1]
+      [.75],[.625],[.625]
     ],
     [
-      [],[],[]
+      [2,3,4],[1,3,4],[1,2,4]
     ],
     [
-      [],[],[]
+      [3,14],[3,7],[2,7]
     ]
   ];
 
@@ -28,7 +28,7 @@ function showCheckpointQuestion(questionNumber){
   var variation = randomVariation(3);
   var fileName = "v" + variation+".jpg";
   var path = "./question"+questionNumber+"/checkpoint/"+fileName;
-  _("idQuizBoxQuestionBox").innerHTML = "<img id = \"idImgQuestionSlide\"/>";
+  _("idQuizBoxQuestionBox").innerHTML = "<img class=\"idImgQuestionSlide\" id = \"idImgQuestionSlide\"/>";
   _("idImgQuestionSlide").src = path;
   _("idQuizBoxAnswersBox").innerHTML = "<div id = \"idAnswerBoxAnswers\"></div><div id = \"idCheckpointSubmitButton\" onclick=\"checkpointSubmitButtonFunc("+questionNumber+","+variation+")\">submit</div>";
   loadAnswers(questionNumber, variation);
@@ -42,7 +42,7 @@ function showCheckpointQuestion(questionNumber){
 function showCheckpointQuestionNewVarWithWorked(questionNumber, variation){
   var fileName = "v" + variation+".jpg";
   var path = "./question"+questionNumber+"/checkpoint/"+fileName;
-  _("idQuizBoxQuestionBox").innerHTML = "<img id = \"idImgQuestionSlide\"/>";
+  _("idQuizBoxQuestionBox").innerHTML = "<img class=\"idImgQuestionSlideThin\" id = \"idImgQuestionSlide\"/>";
   _("idImgQuestionSlide").src = path;
   _("idQuizBoxAnswersBox").innerHTML = "<div id = \"idAnswerBoxAnswers\"></div><div id = \"idCheckpointSubmitButton\" onclick=\"checkpointSubmitButtonFunc("+questionNumber+","+variation+")\">submit</div>";
   bigToHalf();
@@ -135,45 +135,27 @@ function packageAnswers(type){
 function loadAnswers(questionNumber, variation){
   switch(questionNumber){
     case 1:
-    switch(variation){
-      case 1:
-      _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
-      break;
-      case 2:
-      _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
-      //_("idAnswerBoxAnswers").innerHTML = "<input type=\"checkbox\" name=\"choices\" value=1>ONE</input><input type=\"checkbox\" name=\"choices\" value=\"3\">3</input><input type=\"checkbox\" name=\"choices\" value=3>tre</input>";
-      break;
-      case 3:
-      _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
-      //_("idAnswerBoxAnswers").innerHTML = "<input type=\"number\" name=\"choices\">ONE</input><input type=\"number\" name=\"choices\">tre</input>";
-      break;
-    }
+      _("idAnswerBoxAnswers").innerHTML = "<div id=\"idQ1InputBox\" class=\"fracInputBox\" ><input id=\"idQ1Input1\" class=\"fracInputTop\" type=\"number\" name=\"choices\"></input><input id=\"idQ1Input2\" class=\"fracInputBottom\" type=\"number\" name=\"choices\"></input></div>";
+    // switch(variation){
+    //   case 1:
+    //   _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
+    //   break;
+    //   case 2:
+    //   _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
+    //   //_("idAnswerBoxAnswers").innerHTML = "<input type=\"checkbox\" name=\"choices\" value=1>ONE</input><input type=\"checkbox\" name=\"choices\" value=\"3\">3</input><input type=\"checkbox\" name=\"choices\" value=3>tre</input>";
+    //   break;
+    //   case 3:
+    //   _("idAnswerBoxAnswers").innerHTML = "<input type=\"radio\" name=\"choices\" value=1>correct</input><input type=\"radio\" name=\"choices\" value=0>incorrect</input>";
+    //   //_("idAnswerBoxAnswers").innerHTML = "<input type=\"number\" name=\"choices\">ONE</input><input type=\"number\" name=\"choices\">tre</input>";
+    //   break;
+    //}
     break;
+    //&nbsp;&nbsp;&nbsp;&nbsp;
     case 2:
-    switch(variation){
-      case 1:
-      _("idAnswerBoxAnswers").innerHTML = "question 2; var 1";
-      break;
-      case 2:
-      _("idAnswerBoxAnswers").innerHTML = "question 2; var 2";
-      break;
-      case 3:
-      _("idAnswerBoxAnswers").innerHTML = "question 2; var 3";
-      break;
-    }
+      _("idAnswerBoxAnswers").innerHTML = "<input type=\"checkbox\" name=\"choices\" value=1>a</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"checkbox\" name=\"choices\" value=2>b</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"checkbox\" name=\"choices\" value=3>c</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"checkbox\" name=\"choices\" value=4>d</input>";
     break;
     case 3:
-    switch(variation){
-      case 1:
-      _("idAnswerBoxAnswers").innerHTML = "question 3; var 1";
-      break;
-      case 2:
-      _("idAnswerBoxAnswers").innerHTML = "question 3; var 2";
-      break;
-      case 3:
-      _("idAnswerBoxAnswers").innerHTML = "question 3; var 3";
-      break;
-    }
+      _("idAnswerBoxAnswers").innerHTML = "<div id=\"idQ1InputBox\" class=\"fracInputBox\" ><input id=\"idQ1Input1\" class=\"fracInputTop\" type=\"number\" name=\"choices\"></input><input id=\"idQ1Input2\" class=\"fracInputBottom\" type=\"number\" name=\"choices\"></input></div>";
     break;
     case 4:
     switch(variation){
@@ -300,16 +282,19 @@ function loadAnswers(questionNumber, variation){
 
 function checkpointSubmitButtonFunc(questionNumber, variation){
   var type = "selectOne";
-  if(questionNumber == 1 || questionNumber == 2){
-    type = "selectOne";
+  if(questionNumber == 1){
+    type = "enterEquivalentFraction";
   }
-  else if (questionNumber == 3 || questionNumber == 4){
+  else if(questionNumber == 2){
     type = "multipleChoice";
+  }
+  else if (questionNumber == 3){
+    type = "enterExactFraction";
   }
   else if (questionNumber == 5 || questionNumber == 6){
     type = "enterExactFraction";
   }
-  else if (questionNumber == 7 || questionNumber == 8){
+  else if (questionNumber == 8){
     type = "enterEquivalentFraction";
   }
   packageAnswers(type);
